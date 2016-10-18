@@ -36,6 +36,7 @@ void Board::input(char letter)
 
 void Board::print()
 {
+	system("clear");
 	cout << endl;
 	cout << ' ' << bArray[6] << " | " << bArray[7] << " | " << bArray[8] << endl;
 	cout << "---+---+---" << endl;

@@ -5,6 +5,7 @@
 
 int main()
 {
+	system("clear");
 	srand(time(0));
 	Board board1;
 	int playerNum;
