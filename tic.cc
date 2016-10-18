@@ -3,13 +3,15 @@
 
 #include "Board.h"
 
+void titleDisplay();
+
 int main()
 {
-	system("clear");
 	srand(time(0));
 	Board board1;
 	int playerNum;
 	bool done = false;
+	titleDisplay();
 	while (!done)
 	{
 		cout << "How many players? ";
@@ -115,4 +117,17 @@ int main()
 		}
 	}
 	return 0;
+}
+
+void titleDisplay()
+{
+	system("clear");
+	cout << "        88" << endl;
+	cout << "  ,d    \"\"              ,d                            ,d" << endl;
+	cout << "  88                    88                            88" << endl;
+	cout << "MM88MMM 88  ,adPPYba, MM88MMM ,adPPYYba,  ,adPPYba, MM88MMM ,adPPYba,   ,adPPYba," << endl;
+	cout << "  88    88 a8\"     \"\"   88    \"\"     `Y8 a8\"     \"\"   88   a8\"     \"8a a8P_____88" << endl;
+	cout << "  88    88 8b           88    ,adPPPPP88 8b           88   8b       d8 8PP\"\"\"\"\"\"\"" << endl;
+	cout << "  88,   88 \"8a,   ,aa   88,   88,    ,88 \"8a,   ,aa   88,  \"8a,   ,a8\" \"8b,   ,aa" << endl;
+	cout << "  \"Y888 88  `\"Ybbd8\"'   \"Y888 `\"8bbdP\"Y8  `\"Ybbd8\"'   \"Y888 `\"YbbdP\"'   `\"Ybbd8\"'" << endl << endl;
 }
