@@ -1,3 +1,8 @@
 Board.o
 tic
 tic.o
+.Board.cc.swp
+.Board.h.swp
+.README.md.swp
+.makefile.swp
+.tic.cc.swp
