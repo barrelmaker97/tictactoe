@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include <iostream>
+#include <unistd.h>
 
 using namespace std;
 

@@ -81,6 +81,7 @@ bool Board::hasWon()
 void Board::turn(char letter)
 {
 	bool inserted = false;
+	usleep(1000000);
 	while (!inserted)
 	{
 		int location = rand() % 9;
