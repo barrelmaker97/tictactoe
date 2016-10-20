@@ -41,6 +41,8 @@ int main()
 			char choice;
 			char winner = 'O';
 			bool chosen = false;
+			cout << endl;
+			displayArt("example.txt");
 			while (!chosen)
 			{
 				cout << "Would you like to play as X or O? ";
@@ -97,6 +99,8 @@ int main()
 		{
 			bool toggle = true;
 			char letter;
+			cout << endl;
+			displayArt("example.txt");
 			while (!board1.isFull() and !board1.hasWon())
 			{
 				letter = (toggle)?'X':'O';
@@ -125,7 +129,7 @@ void displayArt(const string& filename)
 {
 	ifstream reader(filename);
 	string art = getFileContents(reader);
-	cout << art << endl;
+	cout << art;
 	reader.close();
 }
 
