@@ -3,7 +3,7 @@
 
 #include "Board.h"
 
-void titleDisplay();
+void displayArt(const string&);
 string getFileContents(ifstream&);
 
 int main()
@@ -12,7 +12,8 @@ int main()
 	Board board1;
 	int playerNum;
 	bool done = false;
-	titleDisplay();
+	system("clear");
+	displayArt("art.txt");
 	while (!done)
 	{
 		cout << "How many players? ";
@@ -120,10 +121,9 @@ int main()
 	return 0;
 }
 
-void titleDisplay()
+void displayArt(const string& filename)
 {
-	system("clear");
-	ifstream reader("art.txt");
+	ifstream reader(filename);
 	string art = getFileContents(reader);
 	cout << art << endl;
 	reader.close();
