@@ -2,7 +2,7 @@
 
 Board::Board() {}
 
-void Board::input(char letter)
+void Board::input(const char& letter)
 {
 	int location;
 	bool inserted = false;
@@ -34,7 +34,7 @@ void Board::input(char letter)
 	}
 }
 
-void Board::print()
+void Board::print() const
 {
 	cout << endl;
 	cout << ' ' << bArray[6] << " | " << bArray[7] << " | " << bArray[8] << endl;
@@ -44,7 +44,7 @@ void Board::print()
 	cout << ' ' << bArray[0] << " | " << bArray[1] << " | " << bArray[2] << endl << endl;
 }
 
-bool Board::isFull()
+bool Board::isFull() const
 {
 	bool full = true;
 	for (char x : bArray)
@@ -55,7 +55,7 @@ bool Board::isFull()
 	return full;
 }
 
-bool Board::hasWon()
+bool Board::hasWon() const
 {
 	bool winner = false;
 	if (bArray[0] == bArray[1] && bArray[1] == bArray[2] && bArray[0] != ' ')
@@ -77,7 +77,7 @@ bool Board::hasWon()
 	return winner;
 }
 
-void Board::turn(char letter)
+void Board::turn(const char& letter)
 {
 	bool inserted = false;
 	while (!inserted)

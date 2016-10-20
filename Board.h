@@ -11,11 +11,11 @@ class Board
 		char bArray[9] {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 	public:
 		Board();
-		void input(char);
-		void print();
-		bool isFull();
-		bool hasWon();
-		void turn(char);
+		void input(const char&);
+		void print() const;
+		bool isFull() const;
+		bool hasWon() const;
+		void turn(const char&);
 };
 
 #endif
