@@ -104,6 +104,7 @@ int main()
 			bool toggle = true;
 			char letter;
 			cout << endl;
+			system("clear");
 			displayArt("example.txt");
 			while (!board1.isFull() and !board1.hasWon())
 			{
