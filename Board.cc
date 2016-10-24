@@ -36,6 +36,7 @@ void Board::input(const char& letter)
 
 void Board::print() const
 {
+	system("clear");
 	cout << endl;
 	cout << ' ' << bArray[6] << " | " << bArray[7] << " | " << bArray[8] << endl;
 	cout << "---+---+---" << endl;
@@ -80,6 +81,7 @@ bool Board::hasWon() const
 void Board::turn(const char& letter)
 {
 	bool inserted = false;
+	usleep(750000);
 	while (!inserted)
 	{
 		int location = rand() % 9;

@@ -3,12 +3,17 @@
 
 #include "Board.h"
 
+void displayArt(const string&);
+string getFileContents(ifstream&);
+
 int main()
 {
 	srand(time(0));
 	Board board1;
 	int playerNum;
 	bool done = false;
+	system("clear");
+	displayArt("art.txt");
 	while (!done)
 	{
 		cout << "How many players? ";
@@ -36,6 +41,8 @@ int main()
 			char choice;
 			char winner = 'O';
 			bool chosen = false;
+			cout << endl;
+			displayArt("example.txt");
 			while (!chosen)
 			{
 				cout << "Would you like to play as X or O? ";
@@ -92,6 +99,8 @@ int main()
 		{
 			bool toggle = true;
 			char letter;
+			cout << endl;
+			displayArt("example.txt");
 			while (!board1.isFull() and !board1.hasWon())
 			{
 				letter = (toggle)?'X':'O';
@@ -114,4 +123,30 @@ int main()
 		}
 	}
 	return 0;
+}
+
+void displayArt(const string& filename)
+{
+	ifstream reader(filename);
+	string art = getFileContents(reader);
+	cout << art;
+	reader.close();
+}
+
+string getFileContents(ifstream& file)
+{
+	string lines = "";
+	if (file)
+	{
+		while (file.good())
+		{
+			string temp;
+			getline(file,temp);
+			temp += "\n";
+			lines += temp;
+		}
+		return lines;
+	}
+	else
+		return "ERROR: ASCII art file is missing";
 }
