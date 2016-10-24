@@ -50,6 +50,8 @@ int main()
 				if (choice == 'x' or choice == 'X')
 				{
 					chosen = true;
+					system("clear");
+					displayArt("example.txt");
 					while (!board1.isFull() and !board1.hasWon())
 					{
 						board1.input('X');
@@ -66,6 +68,8 @@ int main()
 				else if (choice == 'o' or choice == 'O')
 				{
 					chosen = true;
+					system("clear");
+					displayArt("example.txt");
 					while (!board1.isFull() and !board1.hasWon())
 					{
 						board1.turn('X');
