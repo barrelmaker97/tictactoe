@@ -1,5 +1,5 @@
 # tictactoe
-## A simple Tic-Tac-Toe program to learn Git
+A simple Tic-Tac-Toe program to learn Git
 
 ### Features:
 * Supports 0-2 players
