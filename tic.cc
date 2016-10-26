@@ -45,8 +45,6 @@ int main()
 				char choice;
 				char winner = 'O';
 				bool chosen = false;
-				cout << endl;
-				displayArt("example.txt");
 				while (!chosen)
 				{
 					cout << "Would you like to play as X or O? ";
