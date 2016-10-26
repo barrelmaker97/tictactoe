@@ -124,7 +124,7 @@ int main()
 			}
 			else
 			{
-				cout << "Try again" << endl;
+				cout << "Please select a number from 0-2" << endl;
 				cin.clear();
 				cin.ignore(1000, '\n');
 			}
