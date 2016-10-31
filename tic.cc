@@ -11,15 +11,14 @@ int main()
 	bool replay = true;
 	while(replay)
 	{
-		replay = false;
 		srand(time(0));
 		Board board1;
-		int playerNum;
-		bool done = false;
 		system("clear");
 		displayArt("art.txt");
+		bool done = false;
 		while (!done)
 		{
+			int playerNum;
 			cout << "How many players? ";
 			cin >> playerNum;
 			if (playerNum == 0)
@@ -48,9 +47,9 @@ int main()
 				{
 					cout << "Would you like to play as X or O? ";
 					cin >> letter;
-					if (letter == 'x' or letter == 'X')
+					if (tolower(letter) == 'x')
 						letter = 'X';
-					else if (letter == 'o' or letter == 'O')
+					else if (tolower(letter) == 'o')
 						letter = 'O';
 					else
 					{
@@ -111,8 +110,8 @@ int main()
 		char decision;
 		cout << endl << "Would you like to play again? (Y for yes, any other key for no): ";
 		cin >> decision;
-		if (tolower(decision) == 'y')
-			replay = true;
+		if (tolower(decision) != 'y')
+			replay = false;
 	}
 	return 0;
 }
