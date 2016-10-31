@@ -42,49 +42,16 @@ int main()
 			}
 			else if (playerNum == 1)
 			{
-				char choice;
 				char winner = 'O';
-				bool chosen = false;
-				while (!chosen)
+				char letter = ' ';
+				while (letter == ' ')
 				{
 					cout << "Would you like to play as X or O? ";
-					cin >> choice;
-					if (choice == 'x' or choice == 'X')
-					{
-						chosen = true;
-						system("clear");
-						displayArt("example.txt");
-						while (!board1.isFull() and !board1.hasWon())
-						{
-							board1.input('X');
-							board1.print();
-							if (board1.isFull() or board1.hasWon())
-							{
-								winner = 'X';
-								break;
-							}
-							board1.turn('O');
-							board1.print();
-						}
-					}
-					else if (choice == 'o' or choice == 'O')
-					{
-						chosen = true;
-						system("clear");
-						displayArt("example.txt");
-						while (!board1.isFull() and !board1.hasWon())
-						{
-							board1.turn('X');
-							board1.print();
-							if (board1.isFull() or board1.hasWon())
-							{
-								winner = 'X';
-								break;
-							}
-							board1.input('O');
-							board1.print();
-						}
-					}
+					cin >> letter;
+					if (letter == 'x' or letter == 'X')
+						letter = 'X';
+					else if (letter == 'o' or letter == 'O')
+						letter = 'O';
 					else
 					{
 						cout << "Please select a valid letter (X/O): " << endl;
@@ -92,11 +59,23 @@ int main()
 						cin.ignore(1000, '\n');
 					}
 				}
+				system("clear");
+				displayArt("example.txt");
+				while (!board1.isFull() and !board1.hasWon())
+				{
+					(letter == 'O')?board1.turn('X'):board1.input('X');
+					board1.print();
+					if (board1.isFull() or board1.hasWon())
+					{
+						winner = 'X';
+						break;
+					}
+					(letter == 'O')?board1.input('O'):board1.turn('O');
+					board1.print();
+				}
 				cout << "GAME OVER" << endl;
 				if (board1.hasWon())
-				{
 					cout << "Letter " << winner << " has won!" << endl;
-				}
 				else
 					cout << "Draw!" << endl;
 				done = true;
@@ -129,11 +108,9 @@ int main()
 				cin.ignore(1000, '\n');
 			}
 		}
-		
 		char decision;
 		cout << endl << "Would you like to play again? (Y for yes, any other key for no): ";
 		cin >> decision;
-
 		if (tolower(decision) == 'y')
 			replay = true;
 	}
